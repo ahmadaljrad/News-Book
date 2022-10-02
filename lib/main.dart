@@ -1,16 +1,15 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/layout/home/home_page.dart';
-import 'package:flutter_app/shared/bloc/cubit/app_cubit.dart';
-import 'package:flutter_app/shared/bloc/newsAppCubit/news_app_cubit.dart';
-import 'package:flutter_app/shared/lang/lang_helper.dart';
-import 'package:flutter_app/shared/local%20storage/hive_app.dart';
-import 'package:flutter_app/shared/network/remote/dio_helper.dart';
-import 'package:flutter_app/shared/styles/themes.dart';
+import 'package:news_book/layout/home/home_page.dart';
+import 'package:news_book/layout/login/login_page.dart';
+import 'package:news_book/shared/bloc/cubit/app_cubit.dart';
+import 'package:news_book/shared/bloc/newsAppCubit/news_app_cubit.dart';
+import 'package:news_book/shared/lang/lang_helper.dart';
+import 'package:news_book/shared/local%20storage/hive_app.dart';
+import 'package:news_book/shared/network/remote/dio_helper.dart';
+import 'package:news_book/shared/styles/themes.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-
-import 'modules/login/login_screen.dart';
 import 'shared/bloc/cubit/app_states.dart';
 
 void main() async {
@@ -50,14 +49,14 @@ class MyApp extends StatelessWidget {
           builder: (context, state) {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
-              title: LangHelper.getLangHelper(LangHelper.newsApp),
+              title: LangHelper.getLangHelper(LangHelper.title),
               theme: themeLight,
               darkTheme: themeDark,
               themeMode: AppCubit.get(context).isDark
                   ? ThemeMode.dark
                   : ThemeMode.light,
               home: Hive.box('AppSettings').get("uid") == null
-                  ? const LoginScreen()
+                  ? const LoginPage()
                   : const HomePage(),
             );
           }),

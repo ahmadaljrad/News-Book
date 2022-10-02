@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/shared/authentication_helper.dart';
-import 'package:flutter_app/shared/firebase_methos.dart';
-import 'package:flutter_app/shared/styles/colors.dart';
+import 'package:news_book/shared/authentication_helper.dart';
+import 'package:news_book/shared/firebase_methos.dart';
+import 'package:news_book/shared/styles/colors.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../shared/components/components.dart';

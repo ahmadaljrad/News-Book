@@ -1,5 +1,5 @@
 class LangHelper {
-  static const String newsApp = "newsApp";
+  static const String title = "News Book";
   static const String busieness = "busieness";
   static const String sports = "sports";
   static const String science = "science";

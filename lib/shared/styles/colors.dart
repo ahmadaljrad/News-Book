@@ -26,3 +26,4 @@ const kSpacerDarkColor = Color(0xFF18191b);
 const kPurpleDarkColor = Color(0xFF9260f6);
 const kGreyDarkColor = Color(0xFFb0b3b8);
 const kItemDarkColor = Color(0xFF333436);
+const kBasicColor = Color.fromRGBO(14, 32, 80, 1);

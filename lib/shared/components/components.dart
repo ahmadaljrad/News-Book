@@ -2,9 +2,9 @@ import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/modules/web_view/web_view.dart';
-import 'package:flutter_app/shared/styles/colors.dart';
-import 'package:flutter_app/shared/styles/styles.dart';
+import 'package:news_book/modules/web_view/web_view.dart';
+import 'package:news_book/shared/styles/colors.dart';
+import 'package:news_book/shared/styles/styles.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -257,7 +257,7 @@ Widget buildCustomSearchBar(
     {required context, required isDark, required color}) {
   return Padding(
     padding:
-        const EdgeInsets.only(top: 15.0, bottom: 5.0, left: 8.0, right: 8.0),
+        const EdgeInsets.only(top: 15.0, bottom: 15.0, left: 8.0, right: 8.0),
     child: Container(
       decoration: BoxDecoration(
         color: color.withOpacity(0.1),
@@ -267,31 +267,37 @@ Widget buildCustomSearchBar(
           width: 2,
         ),
       ),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-        child: TextFormField(
-          onChanged: (value) async {
-            await Future.delayed(const Duration(milliseconds: 500), () {
-              // Do something
-              NewsAppCubit.get(context).searchForPosts(value);
-            });
-          },
-          style: isDark ? authorTextStyleDark : authorTextStyleLight,
-          decoration: InputDecoration(
-            hintText: "search",
-            hintStyle: TextStyle(
-              color: isDark ? kWhiteColor : kGreyColor,
-              fontSize: 18.0,
-            ),
-            border: InputBorder.none,
-            suffixIcon: Icon(
-              FontAwesomeIcons.searchengin,
-              color: isDark ? kWhiteColor : kBlackColor,
-            ),
-            //labelText: 'Enter your username',
+      child: Row(
+        children: [
+          const SizedBox(
+            width: 20.0,
           ),
-          cursorColor: color,
-        ),
+          Expanded(
+            child: TextFormField(
+              onChanged: (value) async {
+                await Future.delayed(const Duration(milliseconds: 500), () {
+                  // Do something
+                  NewsAppCubit.get(context).searchForPosts(value);
+                });
+              },
+              style: isDark ? authorTextStyleDark : authorTextStyleLight,
+              decoration: InputDecoration(
+                hintText: "search",
+                hintStyle: TextStyle(
+                  color: isDark ? kWhiteColor.withAlpha(50) : kGreyColor,
+                  fontSize: 18.0,
+                ),
+                border: InputBorder.none,
+                suffixIcon: Icon(
+                  FontAwesomeIcons.searchengin,
+                  color: isDark ? kWhiteColor : kBlackColor,
+                ),
+                //labelText: 'Enter your username',
+              ),
+              cursorColor: color,
+            ),
+          ),
+        ],
       ),
     ),
   );
@@ -573,7 +579,7 @@ Widget buildHeaderOfPost({required context, isDark, article}) {
             ),
             IconButton(
               icon: FaIcon(
-                FontAwesomeIcons.xmark,
+                Icons.close,
                 color: isDark ? kWhiteColor : kBlackColor,
               ),
               onPressed: () {
@@ -797,7 +803,7 @@ Widget buildCustomMultiSelectBottomSheetField<T>({
       color: colorStyle,
     ),
     closeSearchIcon: Icon(
-      FontAwesomeIcons.xmark,
+      Icons.close,
       color: colorStyle,
     ),
     backgroundColor: isDark ? kAppBarDarkColor : kAppBarLightColor,

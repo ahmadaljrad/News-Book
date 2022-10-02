@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_app/models/user_like.dart';
+import 'package:news_book/models/user_like.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../network/remote/dio_helper.dart';
 import 'news_app_states.dart';

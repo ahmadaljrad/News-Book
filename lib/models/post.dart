@@ -1,5 +1,5 @@
-import 'package:flutter_app/models/user_comment.dart';
-import 'package:flutter_app/models/user_like.dart';
+import 'package:news_book/models/user_comment.dart';
+import 'package:news_book/models/user_like.dart';
 
 class Post {
   List<UserLike>? likes;

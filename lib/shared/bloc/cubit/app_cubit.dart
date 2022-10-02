@@ -1,8 +1,8 @@
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/modules/newsApp/saved/saved_screen.dart';
+import 'package:news_book/modules/newsApp/saved/saved_screen.dart';
 import 'package:hive/hive.dart';
-import 'package:flutter_app/shared/index/category.dart';
+import 'package:news_book/shared/index/category.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../modules/newsApp/business/business_screen.dart';
@@ -34,7 +34,7 @@ class AppCubit extends Cubit<AppStates> {
       selectedColor: Colors.purple,
     ),
     DotNavigationBarItem(
-      icon: const Icon(FontAwesomeIcons.football),
+      icon: const Icon(FontAwesomeIcons.footballBall),
       selectedColor: Colors.blue,
     ),
     DotNavigationBarItem(

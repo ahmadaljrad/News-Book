@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(flutter_app LANGUAGES CXX)
+project(news_book LANGUAGES CXX)
 
-set(BINARY_NAME "flutter_app")
+set(BINARY_NAME "news_book")
 
 cmake_policy(SET CMP0063 NEW)
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/shared/styles/colors.dart';
+import 'package:news_book/shared/styles/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 var sourceNameTextStyeDark = const TextStyle(
